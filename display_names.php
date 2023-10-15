@@ -1,34 +1,40 @@
 <?php
 // Database connection settings
-$hostname = "sql9.freesqldatabase.com";
-$username = "sql9653573";
-$password = "7Zz9GmYtyX";
-$database = "members";
+$hostname = "sql9.freesqldatabase.com"; // Hostname
+$port = 3306; // Port number
+$database = "sql9653573"; // Database name
+$username = "sql9653573"; // Database username
+$password = "7Zz9GmYtyX"; // Database password
 
 // Connect to the database
-$conn = mysqli_connect($hostname, $username, $password, $database);
+$conn = mysqli_connect($hostname, $username, $password, $database, $port);
 
 // Check the connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// SELECT query to fetch names
-$sql = "SELECT First_Name, Last_Name FROM members";
+// SELECT query to fetch the results
+$query = "SELECT ID, `First Name`, `Last Name` FROM members";
 
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $query);
 
-// Display the results in an HTML table
-echo "<html><body>";
-echo "<table border='1'>";
-echo "<tr><th>First Name</th><th>Last Name</th></tr>";
+// Check if the query was successful
+if ($result) {
+    // Display the results in an HTML table
+    echo "<html><body>";
+    echo "<table border='1'>";
+    echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th></tr>";
 
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr><td>" . $row['First_Name'] . "</td><td>" . $row['Last_Name'] . "</td></tr>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['First Name'] . "</td><td>" . $row['Last Name'] . "</td></tr>";
+    }
+
+    echo "</table>";
+    echo "</body></html>";
+} else {
+    echo "Error: " . mysqli_error($conn);
 }
-
-echo "</table>";
-echo "</body></html>";
 
 // Close the database connection
 mysqli_close($conn);
