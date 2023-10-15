@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 // SELECT query to fetch names
-$sql = "SELECT first_name, last_name FROM members";
+$sql = "SELECT First_Name, Last_Name FROM members";
 
 $result = mysqli_query($conn, $sql);
 
@@ -24,7 +24,7 @@ echo "<table border='1'>";
 echo "<tr><th>First Name</th><th>Last Name</th></tr>";
 
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr><td>" . $row['first_name'] . "</td><td>" . $row['last_name'] . "</td></tr>";
+    echo "<tr><td>" . $row['First_Name'] . "</td><td>" . $row['Last_Name'] . "</td></tr>";
 }
 
 echo "</table>";
