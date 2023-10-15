@@ -2,7 +2,7 @@
 // Database connection settings
 $hostname = "sql9.freesqldatabase.com"; // Hostname
 $port = 3306; // Port number
-$database = "sql9653573"; // Database name
+$database = "FreeSQLDb"; // Database name
 $username = "sql9653573"; // Database username
 $password = "7Zz9GmYtyX"; // Database password
 
