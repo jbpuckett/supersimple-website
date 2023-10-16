@@ -2,9 +2,9 @@
 // Database connection settings
 $hostname = "sql9.freesqldatabase.com"; // Hostname
 $port = 3306; // Port number
-$database = "FreeSQLDb"; // Database name
-$username = "sql9653573"; // Database username
-$password = "7Zz9GmYtyX"; // Database password
+$database = "sql9653805"; // Database name
+$username = " sql9653805"; // Database username
+$password = " XGuCcb71eJ"; // Database password
 
 // Connect to the database
 $conn = mysqli_connect($hostname, $username, $password, $database, $port);
